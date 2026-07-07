@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ghali Alharbi — HCI Specialist & UX Strategist</title>
+  <meta name="description" content="Portfolio of Ghali Alharbi — HCI Specialist & UX Strategist. Bridging human intuition and computing power through accessible, meaningful digital experiences." />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
+          },
+          animation: {
+            'fade-in': 'fadeIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards',
+          },
+          keyframes: {
+            fadeIn: {
+              from: { opacity: '0', transform: 'translateY(20px)' },
+              to: { opacity: '1', transform: 'translateY(0)' },
+            },
+          },
+        },
+      },
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <style>
+    html { scroll-behavior: smooth; }
+    ::selection { background: rgba(59,130,246,0.3); }
+    body { font-family: 'Inter', system-ui, -apple-system, sans-serif; }
+    .line-clamp-2 {
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+    /* Screens Gallery */
+    .screens-gallery { display: flex; gap: 1.5rem; overflow-x: auto; padding: 2rem 0; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; }
+    .screens-gallery::-webkit-scrollbar { height: 6px; }
+    .screens-gallery::-webkit-scrollbar-track { background: rgba(255,255,255,0.05); border-radius: 10px; }
+    .screens-gallery::-webkit-scrollbar-thumb { background: rgba(59,130,246,0.3); border-radius: 10px; }
+    .screen-card { flex: 0 0 auto; scroll-snap-align: center; perspective: 800px; }
+    .screen-card img { transition: transform 0.4s ease; border-radius: 1.5rem; }
+    .screen-card:hover img { transform: rotateY(-5deg) scale(1.03); }
+  </style>
+</head>
+<body class="min-h-screen bg-slate-950 text-slate-100">
+
+  <!-- Navigation -->
+  <nav id="navbar" class="fixed top-0 w-full z-50 transition-all duration-300 bg-transparent py-6">
+    <div class="max-w-6xl mx-auto px-6 flex justify-between items-center">
+      <button onclick="goHome()" class="text-2xl font-bold tracking-tighter text-blue-500 hover:scale-105 transition-transform">GHALI.</button>
+      <div class="hidden md:flex space-x-8 items-center">
+        <button onclick="scrollToSection('home')" data-nav="home" class="capitalize text-sm font-medium transition-colors hover:text-blue-400 text-blue-500">home</button>
+        <button onclick="scrollToSection('about')" data-nav="about" class="capitalize text-sm font-medium transition-colors hover:text-blue-400 text-slate-400">about</button>
+        <button onclick="scrollToSection('projects')" data-nav="projects" class="capitalize text-sm font-medium transition-colors hover:text-blue-400 text-slate-400">projects</button>
+        <button onclick="scrollToSection('contact')" data-nav="contact" class="capitalize text-sm font-medium transition-colors hover:text-blue-400 text-slate-400">contact</button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <main id="mainContent">
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen flex flex-col justify-center items-center text-center px-6 relative overflow-hidden">
+      <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-blue-600/10 rounded-full blur-[120px] pointer-events-none"></div>
+      <div class="inline-block px-4 py-1.5 mb-6 text-sm font-medium bg-blue-500/10 text-blue-400 rounded-full border border-blue-500/20 animate-fade-in">
+        HCI Specialist &amp; UX Strategist
+      </div>
+      <h1 class="text-5xl md:text-8xl font-black mb-6 tracking-tight">
+        I'm <span class="bg-gradient-to-r from-blue-400 to-indigo-500 bg-clip-text text-transparent">Ghali Alharbi</span>
+      </h1>
+      <p class="max-w-2xl text-lg md:text-xl text-slate-400 mb-10 leading-relaxed">
+        Bridging the gap between human intuition and computing power.
+        Designing accessible, meaningful, and efficient digital experiences.
+      </p>
+      <div class="flex flex-col md:flex-row gap-4">
+        <button onclick="scrollToSection('projects')" class="px-8 py-4 bg-blue-600 text-white rounded-2xl font-semibold hover:bg-blue-700 transition-all shadow-xl shadow-blue-900/20">Explore Projects</button>
+        <button onclick="scrollToSection('contact')" class="px-8 py-4 bg-white/5 text-white border border-white/10 rounded-2xl font-semibold hover:bg-white/10 transition-all backdrop-blur-sm">Get In Touch</button>
+      </div>
+      <button onclick="scrollToSection('about')" class="absolute bottom-10 animate-bounce text-slate-500 hover:text-white transition-colors">
+        <!-- ChevronDown icon -->
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+      </button>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-32 relative">
+      <div class="max-w-6xl mx-auto px-6">
+        <div class="grid md:grid-cols-2 gap-20 items-center">
+          <div class="relative group">
+            <div class="aspect-[4/5] bg-slate-900 rounded-3xl overflow-hidden relative z-10 border border-white/5">
+              <img src="assets/profile.jpg" alt="Ghali Alharbi" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500" />
+            </div>
+            <div class="absolute -top-4 -left-4 w-24 h-24 border-t-2 border-l-2 border-blue-500/50 rounded-tl-3xl"></div>
+            <div class="absolute -bottom-4 -right-4 w-24 h-24 border-b-2 border-r-2 border-blue-500/50 rounded-br-3xl"></div>
+          </div>
+          <div>
+            <h2 class="text-4xl font-bold mb-8">About Me</h2>
+            <p class="text-slate-400 mb-6 leading-relaxed text-lg">
+              As a Human-Computer Interaction (HCI) specialist, I focus on the symbiosis between people and technology. My approach combines psychological research methods with creative design thinking to solve complex technical challenges.
+            </p>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-12">
+              <!-- Skill: User Research -->
+              <div class="p-5 bg-white/5 border border-white/5 rounded-2xl hover:border-blue-500/30 transition-all group">
+                <div class="text-blue-500 mb-3 group-hover:scale-110 transition-transform">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                </div>
+                <div class="font-bold text-sm mb-1">User Research</div>
+                <div class="text-xs text-slate-500 leading-tight">Qualitative &amp; quantitative user behavior analysis.</div>
+              </div>
+              <!-- Skill: UI/UX Design -->
+              <div class="p-5 bg-white/5 border border-white/5 rounded-2xl hover:border-blue-500/30 transition-all group">
+                <div class="text-blue-500 mb-3 group-hover:scale-110 transition-transform">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="3" rx="2" ry="2"/><line x1="3" x2="21" y1="9" y2="9"/><line x1="9" x2="9" y1="21" y2="9"/></svg>
+                </div>
+                <div class="font-bold text-sm mb-1">UI/UX Design</div>
+                <div class="text-xs text-slate-500 leading-tight">Crafting intuitive and accessible digital interfaces.</div>
+              </div>
+              <!-- Skill: Usability Testing -->
+              <div class="p-5 bg-white/5 border border-white/5 rounded-2xl hover:border-blue-500/30 transition-all group">
+                <div class="text-blue-500 mb-3 group-hover:scale-110 transition-transform">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>
+                </div>
+                <div class="font-bold text-sm mb-1">Usability Testing</div>
+                <div class="text-xs text-slate-500 leading-tight">Evaluating products through rigorous user testing.</div>
+              </div>
+              <!-- Skill: Interaction Design -->
+              <div class="p-5 bg-white/5 border border-white/5 rounded-2xl hover:border-blue-500/30 transition-all group">
+                <div class="text-blue-500 mb-3 group-hover:scale-110 transition-transform">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="3" rx="2"/><line x1="8" x2="16" y1="21" y2="21"/><line x1="12" x2="12" y1="17" y2="21"/></svg>
+                </div>
+                <div class="font-bold text-sm mb-1">Interaction Design</div>
+                <div class="text-xs text-slate-500 leading-tight">Designing seamless human-computer feedback loops.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-32 bg-slate-900/30">
+      <div class="max-w-6xl mx-auto px-6">
+        <div class="mb-16">
+          <h2 class="text-4xl font-bold mb-4">Featured Work</h2>
+          <p class="text-slate-400">Click on any project to view the full HCI case study and mockups.</p>
+        </div>
+        <div class="grid md:grid-cols-2 gap-8" id="projectsGrid">
+          <!-- Project cards will be injected by JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-32">
+      <div class="max-w-6xl mx-auto px-6 text-center">
+        <h2 class="text-4xl font-bold mb-16">Let's Connect</h2>
+        <div class="grid md:grid-cols-3 gap-8 mb-20">
+          <a href="tel:+966544313307" class="group p-10 bg-slate-900 border border-white/5 rounded-3xl hover:border-blue-500/50 transition-all">
+            <div class="w-14 h-14 bg-blue-500/10 rounded-2xl flex items-center justify-center text-blue-500 mx-auto mb-6 group-hover:bg-blue-600 group-hover:text-white transition-all">
+              <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            </div>
+            <div class="font-bold text-lg mb-2">Phone</div>
+            <div class="text-slate-500">0544313307</div>
+          </a>
+          <a href="https://linkedin.com/in/ghali-alharbii" target="_blank" rel="noreferrer" class="group p-10 bg-slate-900 border border-white/5 rounded-3xl hover:border-blue-500/50 transition-all">
+            <div class="w-14 h-14 bg-blue-500/10 rounded-2xl flex items-center justify-center text-blue-500 mx-auto mb-6 group-hover:bg-blue-600 group-hover:text-white transition-all">
+              <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+            </div>
+            <div class="font-bold text-lg mb-2">LinkedIn</div>
+            <div class="text-slate-500">ghali-alharbii</div>
+          </a>
+          <a href="assets/Ghali_Alharbi_CV.pdf" target="_blank" rel="noreferrer" class="group p-10 bg-slate-900 border border-white/5 rounded-3xl hover:border-blue-500/50 transition-all">
+            <div class="w-14 h-14 bg-blue-500/10 rounded-2xl flex items-center justify-center text-blue-500 mx-auto mb-6 group-hover:bg-blue-600 group-hover:text-white transition-all">
+              <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M10 9H8"/><path d="M16 13H8"/><path d="M16 17H8"/></svg>
+            </div>
+            <div class="font-bold text-lg mb-2">Resume</div>
+            <div class="text-slate-500">Download PDF</div>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Project Detail View (hidden by default) -->
+  <div id="projectDetail" class="hidden min-h-screen pt-32 pb-20 px-6 animate-fade-in bg-slate-950">
+    <div class="max-w-5xl mx-auto">
+      <button onclick="closeProject()" class="flex items-center space-x-2 text-slate-400 hover:text-blue-400 mb-12 transition-colors group">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="group-hover:-translate-x-1 transition-transform"><path d="m12 19-7-7 7-7"/><path d="M19 12H5"/></svg>
+        <span>Back to Gallery</span>
+      </button>
+
+      <!-- Project Header -->
+      <div class="mb-12">
+        <div id="detailBadge" class="inline-block px-3 py-1 rounded-full text-xs font-bold mb-4 uppercase tracking-widest"></div>
+        <h1 id="detailTitle" class="text-4xl md:text-6xl font-black mb-6 text-white"></h1>
+        <p id="detailDescription" class="text-xl text-slate-400 mb-8 leading-relaxed max-w-3xl"></p>
+        <div class="flex flex-wrap gap-3 mb-6">
+          <div id="detailTags" class="flex flex-wrap gap-2"></div>
+        </div>
+        <!-- Live Demo Button -->
+        <a id="detailLiveLink" href="#" target="_blank" rel="noreferrer" class="hidden py-3 px-6 bg-blue-600 hover:bg-blue-700 text-white rounded-2xl font-semibold transition-all shadow-lg shadow-blue-900/20 items-center justify-center gap-2 text-sm w-fit">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="inline-block"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg>
+          Live Demo
+        </a>
+      </div>
+
+      <!-- Mobile Screens Gallery -->
+      <div id="mobileScreensSection" class="mb-16 hidden">
+        <h2 class="text-2xl font-bold mb-2 text-white flex items-center gap-3">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-blue-400"><path d="M5 17h14v2H5zM5 5h14v10H5z"/></svg>
+          Mobile Screens
+        </h2>
+        <p class="text-slate-500 text-sm mb-4">Interactive mobile screens showcasing the interface design and user flow.</p>
+        <div id="mobileScreensGallery" class="screens-gallery"></div>
+      </div>
+
+      <!-- Laptop Screens Gallery -->
+      <div id="webScreensSection" class="mb-16 hidden">
+        <h2 class="text-2xl font-bold mb-2 text-white flex items-center gap-3">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-blue-400"><rect width="20" height="14" x="2" y="3" rx="2"/><line x1="8" x2="16" y1="21" y2="21"/><line x1="12" x2="12" y1="17" y2="21"/></svg>
+          Laptop Screens (Web Responsive)
+        </h2>
+        <p class="text-slate-500 text-sm mb-4">Desktop viewport displaying the responsive layout optimized for widescreen displays.</p>
+        <div id="webScreensGallery" class="screens-gallery py-6"></div>
+      </div>
+
+      <!-- Info Cards -->
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="p-8 bg-slate-900/50 border border-white/5 rounded-3xl">
+          <div class="text-blue-400 mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
+          </div>
+          <h3 class="text-xl font-bold mb-4">The Challenge</h3>
+          <p class="text-slate-400 text-sm leading-relaxed">Identifying key pain points through user interviews and task analysis to redefine the core experience.</p>
+        </div>
+        <div class="p-8 bg-slate-900/50 border border-white/5 rounded-3xl">
+          <div class="text-blue-400 mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83Z"/><path d="m22 17.65-9.17 4.16a2 2 0 0 1-1.66 0L2 17.65"/><path d="m22 12.65-9.17 4.16a2 2 0 0 1-1.66 0L2 12.65"/></svg>
+          </div>
+          <h3 class="text-xl font-bold mb-4">The Solution</h3>
+          <p class="text-slate-400 text-sm leading-relaxed">Iterative prototyping and heuristic evaluation to ensure the design meets international usability standards.</p>
+        </div>
+        <div class="p-8 bg-slate-900/50 border border-white/5 rounded-3xl">
+          <div class="text-blue-400 mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+          </div>
+          <h3 class="text-xl font-bold mb-4">HCI Insights</h3>
+          <ul id="detailInsights" class="text-slate-400 text-sm space-y-2"></ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="py-16 border-t border-white/5 bg-slate-950">
+    <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-8">
+      <div class="text-2xl font-bold tracking-tighter text-blue-500">GHALI.</div>
+      <div class="text-slate-500 text-sm" id="footerYear"></div>
+    </div>
+  </footer>
+
+  <script>
+    // ===== DATA =====
+    const projects = [
+      {
+        id: 1,
+        title: "Academic Portal",
+        subtitle: "بوابتي الأكاديمية",
+        description: "A comprehensive bilingual (AR/EN) student portal for Umm Al-Qura University — featuring real-time dashboards, GPA analytics, smart course registration, and an AI chatbot assistant.",
+        fullDescription: "Academic Portal (بوابتي الأكاديمية) is a full-stack student management platform built for Umm Al-Qura University. It features a real-time dashboard with GPA trend analysis, interactive course scheduling with drag-and-drop, attendance tracking with color-coded alerts, a smart AI chatbot (Sanad) for academic guidance, and complete bilingual (Arabic/English) RTL support. The portal also includes dark mode, accessibility features, Firebase integration for live notifications, and countdown timers for academic deadlines.",
+        tags: ["React", "Firebase", "Tailwind CSS", "RTL/Bilingual", "Accessibility"],
+        gradientFrom: "from-teal-500/20",
+        gradientTo: "to-cyan-500/20",
+        color: "teal",
+        mockupType: "Web Application",
+        image: "assets/academic_portal_laptop.png",
+        liveUrl: "https://new34347.github.io/Academic-Portal/web",
+        mobileScreens: [
+          { src: "assets/screen_home.png", label: "Home Dashboard" },
+          { src: "assets/screen_results.png", label: "GPA & Results" },
+          { src: "assets/screen_exams.png", label: "Exam Schedule" },
+          { src: "assets/screen_profile.png", label: "Student Profile" }
+        ],
+        webScreens: [
+          { src: "assets/web_mockup_home.png", label: "Home Dashboard" },
+          { src: "assets/web_mockup_results.png", label: "GPA & Results" },
+          { src: "assets/web_mockup_exams.png", label: "Exam Schedule" },
+          { src: "assets/web_mockup_absences.png", label: "Absences Record" }
+        ],
+        insights: [
+          "Full RTL support with seamless Arabic/English switching.",
+          "Interactive GPA trend charts with hover-based data exploration.",
+          "AI-powered chatbot (Sanad) for real-time academic assistance.",
+          "Accessibility-first design: reduced motion, link highlighting, screen reader support."
+        ]
+      },
+      {
+        id: 2,
+        title: "Khatib & Alami",
+        subtitle: "خطيب وعلمي",
+        description: "A complete redesign of the corporate website for Khatib & Alami, featuring a modern responsive interface, dynamic project galleries, and light/dark theme support.",
+        fullDescription: "A modern, high-performance corporate website redesign for Khatib & Alami, one of the region's leading engineering and design consultancies. Built with responsive layout principles, the platform showcases their global projects and services with dynamic filtering, elegant project modals, and a dark/light mode toggle to enhance readability and user engagement.",
+        tags: ["HTML/CSS", "JavaScript", "Responsive Design", "UI/UX Redesign", "Corporate Website"],
+        gradientFrom: "from-orange-500/20",
+        gradientTo: "to-red-500/20",
+        color: "orange",
+        mockupType: "Web Redesign",
+        image: "assets/khatib_alami_laptop.png",
+        liveUrl: "https://ghalialharbi989-wq.github.io/Khatib-Alami/",
+        webScreens: [
+          { src: "assets/khatib_alami_home.png", label: "Home Page" },
+          { src: "assets/khatib_alami_about.png", label: "About Us Section" },
+          { src: "assets/khatib_alami_vision.png", label: "Vision & Mission" },
+          { src: "assets/khatib_alami_projects.png", label: "Projects Gallery" },
+          { src: "assets/khatib_alami_details.png", label: "Project Details View" }
+        ],
+        insights: [
+          "Highly responsive layout optimized for widescreen displays and mobile viewports.",
+          "Dynamic portfolio filtering by sectors like Architecture, Infrastructure, and Energy.",
+          "Custom interactive project detail modals with clean grid layouts.",
+          "Bilingual-ready interface with intuitive navigation and modern typography."
+        ]
+      },
+      {
+        id: 3,
+        title: "Shtlah",
+        subtitle: "شتله",
+        description: "A modern plant e-commerce mobile app designed for browsing, purchasing, and managing indoor and outdoor plants — with a seamless shopping experience and elegant UI.",
+        fullDescription: "Shtlah (شتله) is a mobile app concept designed for plant enthusiasts to discover, browse, and purchase indoor and outdoor plants. The app features a clean, nature-inspired UI with special offer banners, category-based browsing (Indoor/Outdoor), detailed product pages with specifications, a fully functional shopping cart with quantity management, and a user profile with order tracking and account settings. Designed entirely in Figma, with a focus on intuitive navigation and a calming green color palette.",
+        tags: ["Figma", "UI/UX Design", "E-Commerce", "Mobile App", "Prototyping"],
+        gradientFrom: "from-emerald-500/20",
+        gradientTo: "to-green-500/20",
+        color: "emerald",
+        mockupType: "Mobile App Design",
+        liveUrl: "https://www.figma.com/proto/ScSqkQGLpzUWIIL1gl5KY5/shtlh?timeline=keyframe&timeline-playback-time=1315800&node-id=246-6176&p=f&t=ViLnHyrWu0IVGiBM-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=261%3A8699&show-proto-sidebar=1",
+        mobileScreens: [
+          { src: "assets/shtlah_home.png", label: "Home & Special Offers" },
+          { src: "assets/shtlah_category.png", label: "Indoor Plants Category" },
+          { src: "assets/shtlah_product_detail.png", label: "Product Detail Page" },
+          { src: "assets/shtlah_cart.png", label: "Shopping Cart" },
+          { src: "assets/shtlah_profile.png", label: "User Profile & Settings" }
+        ],
+        insights: [
+          "Nature-inspired green color palette for a calming and immersive plant shopping experience.",
+          "Category-based browsing with Indoor/Outdoor filters for intuitive product discovery.",
+          "Detailed product pages with specifications (size, height, humidity) to assist purchase decisions.",
+          "Streamlined cart and checkout flow with quantity management and size selection."
+        ]
+      },
+      {
+        id: 4,
+        title: "Red Crescent Ops",
+        subtitle: "الهلال الأحمر السعودي",
+        description: "A staff & volunteer positioning system built for the Saudi Red Crescent Authority in Mecca — replacing manual Excel tracking with an interactive web platform featuring Google Maps integration and device QR tracking.",
+        fullDescription: "Built from scratch in collaboration with the Saudi Red Crescent Authority in the Holy Mosque area (نطاق الحرم المكي الشريف), this web platform digitizes the operational workflow that previously relied on Excel spreadsheets. The system maps staff and volunteer pickup locations across operational sectors (المطاف، المسعى، الساحات), displays the nearest health center for each position, provides detailed location descriptions, and opens Google Maps for navigation on tap. Each device also features a QR barcode with emergency contact information (0553557865) and the national ambulance number (997), ensuring device recovery and rapid emergency response.",
+        tags: ["HTML/CSS", "JavaScript", "Google Maps API", "Responsive Web", "Operations Management"],
+        gradientFrom: "from-red-500/20",
+        gradientTo: "to-rose-500/20",
+        color: "red",
+        mockupType: "Web Application",
+        liveUrl: "https://ghali13123-a11y.github.io/Red-Crescent-Staff-1/",
+        mobileScreens: [
+          { src: "assets/rc_sectors_home.png", label: "توزيع القطاعات التشغيلية" },
+          { src: "assets/rc_sectors_scroll.png", label: "معلومات الجهاز و الطوارئ" },
+          { src: "assets/rc_sector_locations.png", label: "نقاط تمركز الموظفين" },
+          { src: "assets/rc_sector_detail.png", label: "تفاصيل مواقع القطاع" }
+        ],
+        insights: [
+          "Replaced manual Excel-based workflow with a fully digital, real-time positioning platform.",
+          "Google Maps deep-linking for instant navigation to each staff positioning point.",
+          "Nearest health center mapping for rapid emergency response coordination.",
+          "Device QR barcode system with embedded contact and ambulance emergency numbers (997)."
+        ]
+      }
+    ];
+
+    // ===== STATE =====
+    let selectedProject = null;
+    let activeSection = 'home';
+
+    // ===== ICONS (SVG strings) =====
+    const icons = {
+      briefcase: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 20V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/><rect width="20" height="14" x="2" y="6" rx="2"/></svg>`,
+      externalLink: `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg>`,
+    };
+
+    // Color mapping for dynamic Tailwind classes
+    const colorStyles = {
+      blue: {
+        badgeBg: 'background: rgba(59,130,246,0.1)',
+        badgeText: 'color: rgb(96,165,250)',
+        badgeBorder: 'border: 1px solid rgba(59,130,246,0.2)',
+      },
+      teal: {
+        badgeBg: 'background: rgba(20,184,166,0.1)',
+        badgeText: 'color: rgb(45,212,191)',
+        badgeBorder: 'border: 1px solid rgba(20,184,166,0.2)',
+      },
+      purple: {
+        badgeBg: 'background: rgba(168,85,247,0.1)',
+        badgeText: 'color: rgb(192,132,252)',
+        badgeBorder: 'border: 1px solid rgba(168,85,247,0.2)',
+      },
+      emerald: {
+        badgeBg: 'background: rgba(16,185,129,0.1)',
+        badgeText: 'color: rgb(52,211,153)',
+        badgeBorder: 'border: 1px solid rgba(16,185,129,0.2)',
+      },
+      orange: {
+        badgeBg: 'background: rgba(249,115,22,0.1)',
+        badgeText: 'color: rgb(251,146,60)',
+        badgeBorder: 'border: 1px solid rgba(249,115,22,0.2)',
+      },
+      red: {
+        badgeBg: 'background: rgba(239,68,68,0.1)',
+        badgeText: 'color: rgb(252,129,129)',
+        badgeBorder: 'border: 1px solid rgba(239,68,68,0.2)',
+      },
+    };
+
+    const gradientStyles = {
+      blue: 'background: linear-gradient(to bottom right, rgba(59,130,246,0.2), rgba(6,182,212,0.2))',
+      teal: 'background: linear-gradient(to bottom right, rgba(20,184,166,0.2), rgba(6,182,212,0.2))',
+      purple: 'background: linear-gradient(to bottom right, rgba(168,85,247,0.2), rgba(236,72,153,0.2))',
+      emerald: 'background: linear-gradient(to bottom right, rgba(16,185,129,0.2), rgba(20,184,166,0.2))',
+      orange: 'background: linear-gradient(to bottom right, rgba(249,115,22,0.2), rgba(239,68,68,0.2))',
+      red: 'background: linear-gradient(to bottom right, rgba(239,68,68,0.2), rgba(244,63,94,0.2))',
+    };
+
+    // ===== RENDER PROJECTS GRID =====
+    function renderProjects() {
+      const grid = document.getElementById('projectsGrid');
+
+      const cardGradients = {
+        teal: 'linear-gradient(to bottom right, rgba(20,184,166,0.2), rgba(6,182,212,0.2))',
+        blue: 'linear-gradient(to bottom right, rgba(59,130,246,0.2), rgba(6,182,212,0.2))',
+        purple: 'linear-gradient(to bottom right, rgba(168,85,247,0.2), rgba(236,72,153,0.2))',
+        emerald: 'linear-gradient(to bottom right, rgba(16,185,129,0.2), rgba(20,184,166,0.2))',
+        orange: 'linear-gradient(to bottom right, rgba(249,115,22,0.2), rgba(239,68,68,0.2))',
+        red: 'linear-gradient(to bottom right, rgba(239,68,68,0.2), rgba(244,63,94,0.2))',
+      };
+
+      grid.innerHTML = projects.map((project, i) => `
+        <div
+          onclick="openProject(${project.id})"
+          class="group relative p-8 rounded-3xl bg-slate-900 border border-white/5 hover:border-blue-500/20 transition-all overflow-hidden cursor-pointer"
+          style="cursor:pointer;"
+        >
+          <div class="absolute inset-0 pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-500" style="background: ${cardGradients[project.color] || cardGradients.blue}"></div>
+          <div class="relative z-10">
+            <div class="flex justify-between items-start mb-8">
+              <div class="p-3 bg-white/5 rounded-xl text-blue-400">${icons.briefcase}</div>
+              <div class="p-2 bg-white/5 rounded-full text-slate-500 group-hover:text-blue-400 transition-colors">${icons.externalLink}</div>
+            </div>
+            <div class="text-xs font-bold text-blue-500 mb-2 uppercase tracking-widest">${project.subtitle}</div>
+            <h3 class="text-2xl font-bold mb-4 group-hover:text-blue-400 transition-colors">${project.title}</h3>
+            <p class="text-slate-400 mb-8 leading-relaxed line-clamp-2">${project.description}</p>
+            <div class="flex flex-wrap gap-2">
+              ${project.tags.map(tag => `<span class="px-3 py-1 bg-white/5 text-slate-300 text-xs font-medium rounded-full border border-white/10">${tag}</span>`).join('')}
+            </div>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    // ===== PROJECT DETAIL =====
+    function openProject(id) {
+      const project = projects.find(p => p.id === id);
+      if (!project) return;
+      selectedProject = project;
+
+      // Hide main, show detail
+      document.getElementById('mainContent').classList.add('hidden');
+      const detail = document.getElementById('projectDetail');
+      detail.classList.remove('hidden');
+
+      // Populate detail
+      const badge = document.getElementById('detailBadge');
+      const cs = colorStyles[project.color] || colorStyles.blue;
+      badge.style.cssText = `${cs.badgeBg}; ${cs.badgeText}; ${cs.badgeBorder}`;
+      badge.textContent = project.mockupType;
+
+      document.getElementById('detailTitle').textContent = project.title;
+      document.getElementById('detailDescription').textContent = project.fullDescription;
+
+      document.getElementById('detailTags').innerHTML = project.tags.map(tag =>
+        `<span class="px-4 py-2 bg-white/5 text-slate-300 rounded-xl border border-white/10 text-sm font-medium">${tag}</span>`
+      ).join('');
+
+      // Handle live link
+      const liveLink = document.getElementById('detailLiveLink');
+      if (project.liveUrl) {
+        liveLink.href = project.liveUrl;
+        liveLink.classList.remove('hidden');
+        liveLink.classList.add('inline-flex');
+      } else {
+        liveLink.classList.add('hidden');
+        liveLink.classList.remove('inline-flex');
+      }
+
+      // Handle mobile screens gallery
+      const mobileSection = document.getElementById('mobileScreensSection');
+      const mobileGallery = document.getElementById('mobileScreensGallery');
+      if (project.mobileScreens && project.mobileScreens.length > 0) {
+        mobileSection.classList.remove('hidden');
+        mobileGallery.innerHTML = project.mobileScreens.map((screen, i) => `
+          <div class="screen-card" style="animation: fadeIn 0.5s ease ${i * 0.1}s both">
+            <div class="relative group">
+              <img src="${screen.src}" alt="${screen.label}" class="h-[420px] w-auto rounded-2xl shadow-2xl shadow-black/40 border border-white/10" />
+              <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent rounded-b-2xl p-4 pt-10 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <p class="text-white text-sm font-bold text-center">${screen.label}</p>
+              </div>
+            </div>
+          </div>
+        `).join('');
+      } else {
+        mobileSection.classList.add('hidden');
+      }
+
+      // Handle laptop web screens gallery (using user's uploaded mockups)
+      const webSection = document.getElementById('webScreensSection');
+      const webGallery = document.getElementById('webScreensGallery');
+      if (project.webScreens && project.webScreens.length > 0) {
+        webSection.classList.remove('hidden');
+        webGallery.innerHTML = project.webScreens.map((screen, i) => `
+          <div class="screen-card" style="animation: fadeIn 0.5s ease ${i * 0.1}s both">
+            <div class="relative group flex flex-col items-center">
+              <img src="${screen.src}" alt="${screen.label}" class="h-[280px] md:h-[350px] w-auto rounded-2xl shadow-xl border border-white/5 transition-transform duration-500 hover:scale-[1.02]" />
+              <p class="text-slate-400 text-sm font-semibold mt-4 text-center">${screen.label}</p>
+            </div>
+          </div>
+        `).join('');
+      } else {
+        webSection.classList.add('hidden');
+      }
+
+      document.getElementById('detailInsights').innerHTML = project.insights.map(insight =>
+        `<li class="flex items-start"><span class="text-blue-500 mr-2">•</span>${insight}</li>`
+      ).join('');
+
+      // Update nav
+      updateNav();
+      window.scroll({ top: 0, behavior: 'smooth' });
+    }
+
+    function closeProject() {
+      selectedProject = null;
+      document.getElementById('projectDetail').classList.add('hidden');
+      document.getElementById('mainContent').classList.remove('hidden');
+      updateNav();
+    }
+
+    function goHome() {
+      if (selectedProject) {
+        closeProject();
+      }
+      window.scroll({ top: 0, behavior: 'smooth' });
+    }
+
+    // ===== SCROLL & NAV =====
+    function scrollToSection(id) {
+      if (selectedProject) closeProject();
+      setTimeout(() => {
+        const el = document.getElementById(id);
+        if (el) el.scrollIntoView({ behavior: 'smooth' });
+      }, 100);
+    }
+
+    function updateNav() {
+      const navbar = document.getElementById('navbar');
+      const scrolled = window.scrollY > 50;
+      if (scrolled || selectedProject) {
+        navbar.classList.remove('bg-transparent', 'py-6');
+        navbar.classList.add('bg-slate-950/80', 'backdrop-blur-lg', 'border-b', 'border-white/10', 'py-4');
+      } else {
+        navbar.classList.remove('bg-slate-950/80', 'backdrop-blur-lg', 'border-b', 'border-white/10', 'py-4');
+        navbar.classList.add('bg-transparent', 'py-6');
+      }
+
+      document.querySelectorAll('[data-nav]').forEach(btn => {
+        const section = btn.dataset.nav;
+        if (section === activeSection && !selectedProject) {
+          btn.classList.remove('text-slate-400');
+          btn.classList.add('text-blue-500');
+        } else {
+          btn.classList.remove('text-blue-500');
+          btn.classList.add('text-slate-400');
+        }
+      });
+    }
+
+    window.addEventListener('scroll', () => {
+      if (selectedProject) return;
+      const sections = ['home', 'about', 'projects', 'contact'];
+      for (const section of sections) {
+        const el = document.getElementById(section);
+        if (el) {
+          const rect = el.getBoundingClientRect();
+          if (rect.top <= 150 && rect.bottom >= 150) {
+            activeSection = section;
+          }
+        }
+      }
+      updateNav();
+    });
+
+    // ===== INIT =====
+    document.getElementById('footerYear').textContent = `© ${new Date().getFullYear()} Ghali Alharbi. All rights reserved.`;
+    renderProjects();
+    updateNav();
+  </script>
+</body>
+</html>
